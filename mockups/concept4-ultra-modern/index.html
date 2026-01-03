@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="ga">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Litriocht - Concept 4: Ultra-Modern E-commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --slate: #475569;
+            --electric-blue: #3B82F6;
+            --light-gray: #F8FAFC;
+            --dark-slate: #0F172A;
+            --medium-gray: #94A3B8;
+            --accent-cyan: #06B6D4;
+            --success-green: #10B981;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark-slate);
+            background-color: var(--light-gray);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Top Bar */
+        .promo-bar {
+            background: linear-gradient(90deg, var(--electric-blue) 0%, var(--accent-cyan) 100%);
+            color: var(--white);
+            padding: 10px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Header */
+        .main-header {
+            background-color: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: grid;
+            grid-template-columns: 200px 1fr auto;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            color: var(--dark-slate);
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--electric-blue);
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 600px;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 12px 50px 12px 20px;
+            border: 2px solid #E2E8F0;
+            border-radius: 50px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .search-container input:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--electric-blue);
+            color: var(--white);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .search-btn:hover {
+            background-color: var(--accent-cyan);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .icon-btn {
+            background-color: var(--light-gray);
+            color: var(--slate);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .icon-btn:hover {
+            background-color: var(--electric-blue);
+            color: var(--white);
+        }
+
+        .cart-btn {
+            background-color: var(--electric-blue);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .cart-btn:hover {
+            background-color: var(--accent-cyan);
+            transform: scale(1.02);
+        }
+
+        /* Navigation */
+        .secondary-nav {
+            background-color: var(--white);
+            border-top: 1px solid #E2E8F0;
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+            overflow-x: auto;
+        }
+
+        .nav-content a {
+            color: var(--slate);
+            text-decoration: none;
+            padding: 15px 0;
+            font-weight: 500;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .nav-content a:hover,
+        .nav-content a.active {
+            color: var(--electric-blue);
+            border-bottom-color: var(--electric-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-slate) 0%, var(--slate) 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(90deg, var(--electric-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--medium-gray);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--electric-blue);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-primary {
+            background-color: var(--electric-blue);
+            color: var(--white);
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            padding: 16px 35px;
+            border: 2px solid var(--white);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--dark-slate);
+        }
+
+        .hero-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10rem;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background-color: var(--white);
+            padding: 25px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .filter-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .filter-chips {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .chip {
+            padding: 8px 20px;
+            background-color: var(--light-gray);
+            border: 2px solid transparent;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .chip:hover,
+        .chip.active {
+            background-color: var(--electric-blue);
+            color: var(--white);
+            border-color: var(--electric-blue);
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 5px;
+        }
+
+        .view-btn {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-gray);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .view-btn.active {
+            background-color: var(--electric-blue);
+            color: var(--white);
+        }
+
+        /* Products Section */
+        .products-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-slate);
+        }
+
+        .sort-dropdown {
+            padding: 10px 20px;
+            border: 2px solid #E2E8F0;
+            border-radius: 50px;
+            background-color: var(--white);
+            font-family: 'Roboto', sans-serif;
+            cursor: pointer;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--success-green);
+            color: var(--white);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
+            text-transform: uppercase;
+        }
+
+        .product-badge.sale {
+            background-color: #EF4444;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 320px;
+            background: linear-gradient(135deg, var(--electric-blue), var(--accent-cyan));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .product-image.blue {
+            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+        }
+        .product-image.cyan {
+            background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+        }
+        .product-image.slate {
+            background: linear-gradient(135deg, #475569 0%, #334155 100%);
+        }
+        .product-image.purple {
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            color: var(--electric-blue);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 6px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .product-author {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            margin-bottom: 15px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-slate);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .quick-buy {
+            background-color: var(--electric-blue);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .quick-buy:hover {
+            background-color: var(--accent-cyan);
+            transform: scale(1.05);
+        }
+
+        .stock-indicator {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+
+        .stock-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--success-green);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--dark-slate) 0%, var(--slate) 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            margin: 60px 0;
+            border-radius: 20px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .newsletter p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--medium-gray);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 16px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .newsletter-form button {
+            padding: 16px 40px;
+            background-color: var(--electric-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+
+        .newsletter-form button:hover {
+            background-color: var(--accent-cyan);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-slate);
+            color: var(--medium-gray);
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            line-height: 2.2;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer a:hover {
+            color: var(--electric-blue);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .payment-icon {
+            width: 45px;
+            height: 30px;
+            background-color: var(--white);
+            border-radius: 4px;
+        }
+
+        /* Floating Cart Button */
+        .floating-cart {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--electric-blue);
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s;
+            z-index: 99;
+        }
+
+        .floating-cart:hover {
+            transform: scale(1.1);
+            background-color: var(--accent-cyan);
+        }
+
+        /* Concept Badge */
+        .concept-badge {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: var(--dark-slate);
+            color: var(--white);
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @media (max-width: 1024px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Promo Bar -->
+    <div class="promo-bar">
+        ⚡ Saor-sheachadadh ar gach ordú os cionn €20 | Eolas 24/7 | Airgead ar ais i gcónaí
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <a href="#" class="logo">litri<span>ocht</span></a>
+
+            <div class="search-container">
+                <input type="text" placeholder="Cuardaigh leabhair, údair, catagóirí...">
+                <button class="search-btn">🔍</button>
+            </div>
+
+            <div class="header-actions">
+                <a href="#" class="icon-btn">👤</a>
+                <a href="#" class="cart-btn">🛒 €0.00</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Secondary Nav -->
+    <nav class="secondary-nav">
+        <div class="nav-content">
+            <a href="#" class="active">Tráthúil</a>
+            <a href="#">Leanaí</a>
+            <a href="#">Ficsean</a>
+            <a href="#">Filíocht</a>
+            <a href="#">Stair & Pholaitíocht</a>
+            <a href="#">Foclóirí</a>
+            <a href="#">Déagóirí</a>
+            <a href="#">Béaloideas</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Gach Leabhar <span>Gaeilge</span> i gCló</h1>
+                <p>An siopa leabhar Gaeilge is fearr ar líne. Seachadadh tapa. Praghsanna ísle. Seirbhís den chéad scoth.</p>
+
+                <div class="cta-buttons">
+                    <a href="#products" class="btn-primary">Brabhsáil Anois</a>
+                    <a href="#" class="btn-secondary">Faigh Amach Níos Mó</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">5K+</div>
+                        <div class="stat-label">Teidil</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Blianta</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Custaiméirí</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                📚
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="filter-content">
+            <div class="filter-chips">
+                <div class="chip active">Gach Ceann</div>
+                <div class="chip">Bestsellers</div>
+                <div class="chip">Nua Amach</div>
+                <div class="chip">Ar Lascaine</div>
+                <div class="chip">Gradaim</div>
+            </div>
+            <div class="view-toggle">
+                <button class="view-btn active">▦</button>
+                <button class="view-btn">☰</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="section-header">
+            <h2 class="section-title">Leabhair Tráthúla</h2>
+            <select class="sort-dropdown">
+                <option>Sórtáil: Tráthúil</option>
+                <option>Praghsanna: Íseal go hArd</option>
+                <option>Praghsanna: Ard go hÍseal</option>
+                <option>Teideal: A-Z</option>
+            </select>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <span class="product-badge">Nua</span>
+                <div class="product-image blue">
+                    An Té a Bhíonn ag Gáire
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Filíocht</div>
+                    <h3 class="product-title">An Té a Bhíonn ag Gáire</h3>
+                    <p class="product-author">Seán Ó Ríordáin</p>
+                    <div class="stock-indicator">
+                        <span class="stock-dot"></span>
+                        <span>I stoc - Seol inniu</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">€18</div>
+                        <button class="quick-buy">Ceannaigh</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image cyan">
+                    Gearóid Willie Ó Fátharta
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Beathaisnéis</div>
+                    <h3 class="product-title">Gearóid Willie Ó Fátharta</h3>
+                    <p class="product-author">Gearóid Willie Ó Fátharta</p>
+                    <div class="stock-indicator">
+                        <span class="stock-dot"></span>
+                        <span>I stoc</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">€15</div>
+                        <button class="quick-buy">Ceannaigh</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="product-badge sale">-15%</span>
+                <div class="product-image slate">
+                    Asailín Abú!
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Leanaí</div>
+                    <h3 class="product-title">Asailín Abú!</h3>
+                    <p class="product-author">Máire Zepf</p>
+                    <div class="stock-indicator">
+                        <span class="stock-dot"></span>
+                        <span>I stoc</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">€12</div>
+                        <button class="quick-buy">Ceannaigh</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image purple">
+                    Ceol na Mara
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Ficsean</div>
+                    <h3 class="product-title">Ceol na Mara</h3>
+                    <p class="product-author">Pádraig Ó Siadhail</p>
+                    <div class="stock-indicator">
+                        <span class="stock-dot"></span>
+                        <span>I stoc</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">€17</div>
+                        <button class="quick-buy">Ceannaigh</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="product-badge">Nua</span>
+                <div class="product-image blue">
+                    Cumraíocht
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Filíocht</div>
+                    <h3 class="product-title">Cumraíocht</h3>
+                    <p class="product-author">Caitríona Ní Chléirchín</p>
+                    <div class="stock-indicator">
+                        <span class="stock-dot"></span>
+                        <span>I stoc</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">€12</div>
+                        <button class="quick-buy">Ceannaigh</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image cyan">
+                    Castar Linn É
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Ficsean</div>
+                    <h3 class="product-title">Castar Linn É</h3>
+                    <p class="product-author">Muiris Ó Laoire</p>
+                    <div class="stock-indicator">
+                        <span class="stock-dot"></span>
+                        <span>I stoc</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">€15</div>
+                        <button class="quick-buy">Ceannaigh</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image slate">
+                    Patsy Kit Ó Murchú
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Béaloideas</div>
+                    <h3 class="product-title">Patsy Kit Ó Murchú</h3>
+                    <p class="product-author">Lorcán S. Ó Treasaigh</p>
+                    <div class="stock-indicator">
+                        <span class="stock-dot"></span>
+                        <span>I stoc</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">€20</div>
+                        <button class="quick-buy">Ceannaigh</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image purple">
+                    Glór ón Sceilg
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Stair</div>
+                    <h3 class="product-title">Glór ón Sceilg</h3>
+                    <p class="product-author">Dónall Ó Móráin</p>
+                    <div class="stock-indicator">
+                        <span class="stock-dot"></span>
+                        <span>I stoc</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">€25</div>
+                        <button class="quick-buy">Ceannaigh</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div class="newsletter">
+        <div class="newsletter-content">
+            <h2>Cláraigh lenár Nuachtlitir 📬</h2>
+            <p>Faigh eolas faoi leabhair nua, tairiscintí speisialta, agus imeachtaí</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Do sheoladh ríomhphoist">
+                <button type="submit">Cláraigh</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>litriocht</h3>
+                <p>An siopa leabhar Gaeilge is faide ag fónamh ar líne in Éirinn. Ag freastal ar léitheoirí ó 1999 le seirbhís iontach agus rogha mhór leabhar.</p>
+            </div>
+            <div>
+                <h3>Naisc Thapa</h3>
+                <ul>
+                    <li><a href="#">Catagóirí</a></li>
+                    <li><a href="#">Bestsellers</a></li>
+                    <li><a href="#">Nua Amach</a></li>
+                    <li><a href="#">Tairiscintí</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Cúnamh</h3>
+                <ul>
+                    <li><a href="#">Cuntais</a></li>
+                    <li><a href="#">Orduithe</a></li>
+                    <li><a href="#">Seachadadh</a></li>
+                    <li><a href="#">Fillteacháin</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Eolas</h3>
+                <ul>
+                    <li><a href="#">Fúinn</a></li>
+                    <li><a href="#">Teagmháil</a></li>
+                    <li><a href="#">Príobháideacht</a></li>
+                    <li><a href="#">Téarmaí</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 Litriocht. Gach ceart ar cosaint.</div>
+            <div class="payment-icons">
+                <div class="payment-icon"></div>
+                <div class="payment-icon"></div>
+                <div class="payment-icon"></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Cart -->
+    <div class="floating-cart">🛒</div>
+
+    <div class="concept-badge">Concept 4: Ultra-Modern</div>
+</body>
+</html>

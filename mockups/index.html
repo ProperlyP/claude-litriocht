@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Litriocht Redesign Concepts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            opacity: 0.85;
+        }
+
+        .concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 35px;
+            margin-bottom: 50px;
+        }
+
+        .concept-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+        }
+
+        .concept-preview {
+            height: 350px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .concept-preview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.2), transparent);
+        }
+
+        .concept-card:nth-child(1) .concept-preview {
+            background: linear-gradient(135deg, #2D5016 0%, #4A6B2E 100%);
+        }
+
+        .concept-card:nth-child(2) .concept-preview {
+            background: linear-gradient(135deg, #FF6B35 0%, #3BCEAC 100%);
+        }
+
+        .concept-card:nth-child(3) .concept-preview {
+            background: linear-gradient(135deg, #6B2737 0%, #8B9D83 100%);
+        }
+
+        .concept-card:nth-child(4) .concept-preview {
+            background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+        }
+
+        .concept-info {
+            padding: 35px;
+        }
+
+        .concept-number {
+            color: #999;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .concept-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #222;
+            font-weight: 700;
+        }
+
+        .concept-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .concept-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .feature-tag {
+            background-color: #f0f0f0;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .view-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .view-button:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .concept-card:nth-child(1) .view-button {
+            background: linear-gradient(135deg, #2D5016 0%, #4A6B2E 100%);
+        }
+
+        .concept-card:nth-child(2) .view-button {
+            background: linear-gradient(135deg, #FF6B35 0%, #3BCEAC 100%);
+        }
+
+        .concept-card:nth-child(3) .view-button {
+            background: linear-gradient(135deg, #6B2737 0%, #8B9D83 100%);
+        }
+
+        .concept-card:nth-child(4) .view-button {
+            background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .tech-stack {
+            margin-top: 20px;
+            font-weight: 600;
+            color: #FFE57F;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header p {
+                font-size: 1.1rem;
+            }
+
+            .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .concept-preview {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Litriocht Redesign Concepts</h1>
+            <p>Four Contrasting Design Directions</p>
+            <p class="subtitle">Irish Language Bookstore Reimagined</p>
+        </div>
+
+        <div class="concepts-grid">
+            <!-- Concept 1 -->
+            <div class="concept-card">
+                <div class="concept-preview">📚</div>
+                <div class="concept-info">
+                    <div class="concept-number">Concept 01</div>
+                    <h2 class="concept-title">Modern Minimalist Irish</h2>
+                    <p class="concept-description">
+                        A clean, contemporary design with generous whitespace and elegant typography.
+                        Features a sophisticated color palette inspired by Irish landscapes with deep forest green
+                        and warm gold accents.
+                    </p>
+                    <div class="concept-features">
+                        <span class="feature-tag">Clean Typography</span>
+                        <span class="feature-tag">Generous Whitespace</span>
+                        <span class="feature-tag">Sticky Header</span>
+                        <span class="feature-tag">Card Layouts</span>
+                        <span class="feature-tag">Filter Chips</span>
+                    </div>
+                    <a href="concept1-modern-minimalist/index.html" class="view-button">View Mockup →</a>
+                </div>
+            </div>
+
+            <!-- Concept 2 -->
+            <div class="concept-card">
+                <div class="concept-preview">🎨</div>
+                <div class="concept-info">
+                    <div class="concept-number">Concept 02</div>
+                    <h2 class="concept-title">Bold Editorial/Magazine</h2>
+                    <p class="concept-description">
+                        Vibrant and energetic design celebrating Irish culture with bold colors and dynamic layouts.
+                        Features masonry grids, animated elements, and a magazine-style aesthetic that commands attention.
+                    </p>
+                    <div class="concept-features">
+                        <span class="feature-tag">Vibrant Colors</span>
+                        <span class="feature-tag">Masonry Grid</span>
+                        <span class="feature-tag">Animated Ticker</span>
+                        <span class="feature-tag">Product Badges</span>
+                        <span class="feature-tag">Bold Typography</span>
+                    </div>
+                    <a href="concept2-editorial-magazine/index.html" class="view-button">View Mockup →</a>
+                </div>
+            </div>
+
+            <!-- Concept 3 -->
+            <div class="concept-card">
+                <div class="concept-preview">✒️</div>
+                <div class="concept-info">
+                    <div class="concept-number">Concept 03</div>
+                    <h2 class="concept-title">Heritage & Tradition</h2>
+                    <p class="concept-description">
+                        A design honoring Irish literary tradition with classic serif typography and rich, bookish aesthetics.
+                        Features burgundy and cream tones, Celtic-inspired ornaments, and a timeless bookshelf metaphor.
+                    </p>
+                    <div class="concept-features">
+                        <span class="feature-tag">Classic Serif Fonts</span>
+                        <span class="feature-tag">Book Spine Design</span>
+                        <span class="feature-tag">Celtic Ornaments</span>
+                        <span class="feature-tag">Textured Backgrounds</span>
+                        <span class="feature-tag">Literary Quotes</span>
+                    </div>
+                    <a href="concept3-heritage-tradition/index.html" class="view-button">View Mockup →</a>
+                </div>
+            </div>
+
+            <!-- Concept 4 -->
+            <div class="concept-card">
+                <div class="concept-preview">⚡</div>
+                <div class="concept-info">
+                    <div class="concept-number">Concept 04</div>
+                    <h2 class="concept-title">Ultra-Modern E-commerce</h2>
+                    <p class="concept-description">
+                        Sleek, conversion-focused design with modern UI patterns and smooth interactions.
+                        Features electric blue accents, rounded elements, stock indicators, and contemporary e-commerce best practices.
+                    </p>
+                    <div class="concept-features">
+                        <span class="feature-tag">Modern UI</span>
+                        <span class="feature-tag">Stock Indicators</span>
+                        <span class="feature-tag">Quick Buy</span>
+                        <span class="feature-tag">Floating Cart</span>
+                        <span class="feature-tag">Advanced Search</span>
+                    </div>
+                    <a href="concept4-ultra-modern/index.html" class="view-button">View Mockup →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>Implementation Ready</h3>
+            <p>
+                All concepts designed for implementation with <strong>GeneratePress</strong> and <strong>GenerateBlocks</strong>,
+                maintaining full <strong>WooCommerce</strong> compatibility. Each design is fully responsive and optimized
+                for performance.
+            </p>
+            <p class="tech-stack">
+                WordPress • GeneratePress • GenerateBlocks • WooCommerce
+            </p>
+        </div>
+    </div>
+</body>
+</html>

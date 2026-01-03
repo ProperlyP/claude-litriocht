@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="ga">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Litriocht - Concept 2: Bold Editorial/Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --vibrant-orange: #FF6B35;
+            --deep-navy: #1A2238;
+            --bright-turquoise: #3BCEAC;
+            --pure-white: #FFFFFF;
+            --light-pink: #FFE5D9;
+            --yellow-accent: #FFC947;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--deep-navy);
+            background-color: var(--pure-white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Header */
+        .top-ticker {
+            background-color: var(--vibrant-orange);
+            color: var(--pure-white);
+            padding: 12px 0;
+            overflow: hidden;
+        }
+
+        .ticker-content {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            padding: 0 40px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .main-header {
+            background-color: var(--deep-navy);
+            color: var(--pure-white);
+            padding: 25px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--pure-white);
+            font-weight: 800;
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--vibrant-orange);
+        }
+
+        .hamburger {
+            width: 35px;
+            height: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            background-color: var(--bright-turquoise);
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .search-icon, .cart-button {
+            background-color: var(--vibrant-orange);
+            color: var(--pure-white);
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .cart-button {
+            background-color: var(--bright-turquoise);
+        }
+
+        .search-icon:hover, .cart-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--deep-navy) 0%, #2E3856 100%);
+            color: var(--pure-white);
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+
+        .hero-text {
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-label {
+            background-color: var(--vibrant-orange);
+            color: var(--pure-white);
+            padding: 8px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            width: fit-content;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--bright-turquoise);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background-color: var(--vibrant-orange);
+            color: var(--pure-white);
+            padding: 18px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--pure-white);
+            padding: 18px 40px;
+            border: 2px solid var(--bright-turquoise);
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--bright-turquoise);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(59, 206, 172, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bright-turquoise);
+            border-color: var(--bright-turquoise);
+        }
+
+        .hero-image {
+            background: linear-gradient(45deg, var(--vibrant-orange), var(--bright-turquoise));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 800;
+            position: relative;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: var(--yellow-accent);
+            border-radius: 50%;
+            opacity: 0.2;
+            top: 50px;
+            right: 50px;
+        }
+
+        /* Featured Section */
+        .featured-section {
+            background-color: var(--light-pink);
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        /* Masonry Grid */
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+
+        .product-card {
+            background-color: var(--pure-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px) rotate(-1deg);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .product-card.featured {
+            grid-row: span 2;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--vibrant-orange);
+            color: var(--pure-white);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+
+        .badge.bestseller {
+            background-color: var(--yellow-accent);
+            color: var(--deep-navy);
+        }
+
+        .badge.new {
+            background-color: var(--bright-turquoise);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-align: center;
+            padding: 30px;
+            color: var(--pure-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card.featured .product-image {
+            height: 100%;
+            min-height: 600px;
+        }
+
+        .product-image.orange { background: linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%); }
+        .product-image.turquoise { background: linear-gradient(135deg, #3BCEAC 0%, #5DDBC0 100%); }
+        .product-image.navy { background: linear-gradient(135deg, #1A2238 0%, #2E3856 100%); }
+        .product-image.yellow { background: linear-gradient(135deg, #FFC947 0%, #FFD76B 100%); }
+        .product-image.pink { background: linear-gradient(135deg, #FF6B9D 0%, #FF8CAF 100%); }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-category {
+            color: var(--vibrant-orange);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .product-author {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--deep-navy);
+        }
+
+        .quick-add {
+            background-color: var(--deep-navy);
+            color: var(--pure-white);
+            padding: 12px 25px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .quick-add:hover {
+            background-color: var(--vibrant-orange);
+            transform: scale(1.05);
+        }
+
+        /* Category Cards */
+        .category-section {
+            padding: 80px 20px;
+            background-color: var(--pure-white);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            padding: 50px 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: var(--pure-white);
+            font-weight: 700;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            transition: all 0.5s;
+        }
+
+        .category-card:hover::before {
+            top: -100%;
+            right: -100%;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+        }
+
+        .cat-orange { background: linear-gradient(135deg, var(--vibrant-orange), #FF8C61); }
+        .cat-turquoise { background: linear-gradient(135deg, var(--bright-turquoise), #5DDBC0); }
+        .cat-navy { background: linear-gradient(135deg, var(--deep-navy), #2E3856); }
+        .cat-yellow { background: linear-gradient(135deg, var(--yellow-accent), #FFD76B); }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--deep-navy) 0%, #2E3856 100%);
+            color: var(--pure-white);
+            padding: 80px 20px;
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        .newsletter h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .newsletter p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 20px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .newsletter-form button {
+            padding: 20px 45px;
+            background-color: var(--vibrant-orange);
+            color: var(--pure-white);
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button:hover {
+            background-color: var(--bright-turquoise);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--deep-navy);
+            color: var(--pure-white);
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--vibrant-orange);
+            font-weight: 800;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer a {
+            color: var(--pure-white);
+            text-decoration: none;
+            line-height: 2.2;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--bright-turquoise);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 2px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: var(--vibrant-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--bright-turquoise);
+            transform: scale(1.1);
+        }
+
+        /* Concept Badge */
+        .concept-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--vibrant-orange);
+            color: var(--pure-white);
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .masonry-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Ticker -->
+    <div class="top-ticker">
+        <div class="ticker-content">
+            <span class="ticker-item">🔥 NUA: Leabhair nua gach seachtain!</span>
+            <span class="ticker-item">📦 Saor-sheachadadh ar orduithe os cionn €20</span>
+            <span class="ticker-item">⭐ Buaiteoir Gradam Litríochta 2025</span>
+            <span class="ticker-item">🔥 NUA: Leabhair nua gach seachtain!</span>
+            <span class="ticker-item">📦 Saor-sheachadadh ar orduithe os cionn €20</span>
+            <span class="ticker-item">⭐ Buaiteoir Gradam Litríochta 2025</span>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="#" class="logo"><span>LITRI</span>OCHT</a>
+            <div class="header-actions">
+                <a href="#" class="search-icon">🔍 Cuardaigh</a>
+                <a href="#" class="cart-button">🛒 €0.00</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-text">
+                <span class="hero-label">An Siopa Leabhar #1</span>
+                <h1>Gach Leabhar <span>Gaeilge</span> i gCló</h1>
+                <p>Ag freastal ar léitheoirí Gaeilge ó 1999. Na mílte teideal. Seachadadh tapa.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn-primary">Brabhsáil Anois</a>
+                    <a href="#" class="btn-secondary">Faigh Amach Níos Mó</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <span>📚</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Bestsellers</h2>
+            <p class="section-subtitle">Na leabhair is mó a dhíoltar</p>
+
+            <div class="masonry-grid">
+                <div class="product-card featured">
+                    <span class="badge bestseller">Bestseller</span>
+                    <div class="product-image orange">An Té a Bhíonn ag Gáire</div>
+                    <div class="product-info">
+                        <div class="product-category">Filíocht</div>
+                        <h3 class="product-title">An Té a Bhíonn ag Gáire</h3>
+                        <p class="product-author">Seán Ó Ríordáin</p>
+                        <div class="product-footer">
+                            <div class="product-price">€18</div>
+                            <button class="quick-add">Cuir sa Chairt</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge new">Nua</span>
+                    <div class="product-image turquoise">Gearóid Willie Ó Fátharta</div>
+                    <div class="product-info">
+                        <div class="product-category">Beathaisnéis</div>
+                        <h3 class="product-title">Gearóid Willie</h3>
+                        <p class="product-author">Gearóid Willie Ó Fátharta</p>
+                        <div class="product-footer">
+                            <div class="product-price">€15</div>
+                            <button class="quick-add">Cuir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image navy">Asailín Abú!</div>
+                    <div class="product-info">
+                        <div class="product-category">Leanaí</div>
+                        <h3 class="product-title">Asailín Abú!</h3>
+                        <p class="product-author">Máire Zepf</p>
+                        <div class="product-footer">
+                            <div class="product-price">€12</div>
+                            <button class="quick-add">Cuir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge">-20%</span>
+                    <div class="product-image yellow">Ceol na Mara</div>
+                    <div class="product-info">
+                        <div class="product-category">Ficsean</div>
+                        <h3 class="product-title">Ceol na Mara</h3>
+                        <p class="product-author">Pádraig Ó Siadhail</p>
+                        <div class="product-footer">
+                            <div class="product-price">€17</div>
+                            <button class="quick-add">Cuir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image pink">Cumraíocht</div>
+                    <div class="product-info">
+                        <div class="product-category">Filíocht</div>
+                        <h3 class="product-title">Cumraíocht</h3>
+                        <p class="product-author">Caitríona Ní Chléirchín</p>
+                        <div class="product-footer">
+                            <div class="product-price">€12</div>
+                            <button class="quick-add">Cuir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge new">Nua</span>
+                    <div class="product-image orange">Castar Linn É</div>
+                    <div class="product-info">
+                        <div class="product-category">Ficsean</div>
+                        <h3 class="product-title">Castar Linn É</h3>
+                        <p class="product-author">Muiris Ó Laoire</p>
+                        <div class="product-footer">
+                            <div class="product-price">€15</div>
+                            <button class="quick-add">Cuir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="category-section">
+        <div class="container">
+            <h2 class="section-title">Brabhsáil de réir Catagóra</h2>
+            <p class="section-subtitle">Aimsigh do chineál leabhair</p>
+
+            <div class="category-grid">
+                <div class="category-card cat-orange">
+                    <div>📖 Leanaí</div>
+                </div>
+                <div class="category-card cat-turquoise">
+                    <div>✍️ Ficsean</div>
+                </div>
+                <div class="category-card cat-navy">
+                    <div>📜 Stair</div>
+                </div>
+                <div class="category-card cat-yellow">
+                    <div>📚 Foclóirí</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div class="newsletter">
+        <h2>Bí ar an Eolas! 📬</h2>
+        <p>Cláraigh lenár nuachtlitir agus faigh eolas faoi leabhair nua agus tairiscintí speisialta</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Do sheoladh ríomhphoist">
+            <button type="submit">Cláraigh Anois</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>LITRIOCHT</h3>
+                <p>An siopa leabhar Gaeilge is faide ag fónamh ar líne in Éirinn. Díograis do litríocht Ghaeilge ó 1999.</p>
+            </div>
+            <div>
+                <h3>Naisc</h3>
+                <ul>
+                    <li><a href="#">Fúinn</a></li>
+                    <li><a href="#">Catagóirí</a></li>
+                    <li><a href="#">Bestsellers</a></li>
+                    <li><a href="#">Déan Teagmháil</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Eolas</h3>
+                <ul>
+                    <li><a href="#">Seachadadh</a></li>
+                    <li><a href="#">Fillteacháin</a></li>
+                    <li><a href="#">Príobháideacht</a></li>
+                    <li><a href="#">Téarmaí</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Teagmháil</h3>
+                <ul>
+                    <li><a href="#">eolas@litriocht.com</a></li>
+                    <li><a href="#">+353 1 234 5678</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 Litriocht. Gach ceart ar cosaint.</div>
+            <div class="social-links">
+                <a href="#">F</a>
+                <a href="#">T</a>
+                <a href="#">I</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="concept-badge">Concept 2: Editorial Magazine</div>
+</body>
+</html>
