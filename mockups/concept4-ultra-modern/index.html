@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Litríocht - Ultra-Modern Design with Irish Heritage</title>
+    <title>Litríocht - Modern Irish Bookstore</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--body-text);
             background-color: var(--primary-bg);
             line-height: 1.6;
@@ -41,11 +41,11 @@
         /* Header */
         .site-header {
             background: linear-gradient(135deg, #1e3a2f 0%, #2d5a45 100%);
-            padding: 1.5rem 2rem;
+            padding: 1.2rem 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         .header-content {
@@ -82,8 +82,8 @@
         .logo-bar:nth-child(3) { width: 18px; }
 
         .logo-text {
-            font-size: 1.8rem;
-            font-weight: 500;
+            font-size: 1.6rem;
+            font-weight: 600;
             letter-spacing: 0.5px;
             color: #fff;
         }
@@ -96,27 +96,11 @@
         }
 
         .nav-links a {
-            color: #fff;
+            color: rgba(255,255,255,0.9);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s;
-            position: relative;
-            padding-bottom: 5px;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--light-sage);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
         }
 
         .nav-links a:hover {
@@ -135,20 +119,19 @@
             background: #fff;
             border-radius: 50px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
         .search-bar input {
-            padding: 0.75rem 1.25rem;
+            padding: 0.7rem 1.2rem;
             border: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             outline: none;
-            width: 250px;
+            width: 240px;
             font-family: 'Inter', sans-serif;
         }
 
         .search-bar button {
-            padding: 0.75rem 1.5rem;
+            padding: 0.7rem 1.3rem;
             background: var(--medium-green);
             border: none;
             color: #fff;
@@ -164,12 +147,12 @@
         .cart-btn {
             background: var(--light-sage);
             color: var(--dark-forest-green);
-            padding: 0.75rem 1.5rem;
+            padding: 0.7rem 1.3rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.3s;
-            white-space: nowrap;
         }
 
         .cart-btn:hover {
@@ -179,44 +162,22 @@
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, rgba(30,58,47,0.95) 0%, rgba(45,90,69,0.95) 100%);
-            padding: 7rem 2rem;
+            background: linear-gradient(135deg, #1e3a2f 0%, #2d5a45 100%);
+            padding: 5rem 2rem;
             color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                radial-gradient(circle at 15% 25%, transparent 40%, rgba(143,188,143,0.08) 40%, rgba(143,188,143,0.08) 42%, transparent 42%),
-                radial-gradient(circle at 85% 75%, transparent 35%, rgba(143,188,143,0.08) 35%, rgba(143,188,143,0.08) 37%, transparent 37%),
-                radial-gradient(circle at 40% 70%, transparent 30%, rgba(143,188,143,0.08) 30%, rgba(143,188,143,0.08) 32%, transparent 32%),
-                radial-gradient(circle at 65% 30%, transparent 38%, rgba(143,188,143,0.08) 38%, rgba(143,188,143,0.08) 40%, transparent 40%);
-            background-size: 400px 400px;
-            pointer-events: none;
-            z-index: 0;
         }
 
         .hero-content {
             max-width: 1400px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
             text-align: center;
         }
 
         .hero-title {
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             font-weight: 700;
             line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .accent-text {
@@ -224,7 +185,7 @@
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 2.5rem;
             opacity: 0.95;
         }
@@ -233,8 +194,8 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            max-width: 800px;
-            margin: 3rem auto 0;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .stat {
@@ -242,27 +203,26 @@
             padding: 1.5rem;
             background: rgba(255,255,255,0.1);
             border-radius: 12px;
-            border: 2px solid var(--light-sage);
             backdrop-filter: blur(10px);
         }
 
         .stat-number {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--light-sage);
         }
 
         .stat-label {
             color: rgba(255,255,255,0.9);
-            margin-top: 0.5rem;
-            font-size: 0.95rem;
+            margin-top: 0.3rem;
+            font-size: 0.9rem;
         }
 
         /* Main Content */
         .main-content {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 4rem 2rem;
         }
 
         /* Section Headers */
@@ -272,104 +232,53 @@
         }
 
         .section-header h2 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--heading-color);
-            margin-bottom: 0.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--medium-green);
-            border-radius: 2px;
+            margin-bottom: 0.8rem;
         }
 
         .section-header p {
             color: var(--secondary-text);
             font-size: 1.1rem;
-            margin-top: 1.5rem;
         }
 
         /* Categories Section */
         .categories-section {
             background: var(--secondary-bg);
-            padding: 5rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .categories-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                radial-gradient(circle at 25% 35%, transparent 35%, rgba(45,90,69,0.04) 35%, rgba(45,90,69,0.04) 37%, transparent 37%),
-                radial-gradient(circle at 75% 65%, transparent 30%, rgba(45,90,69,0.04) 30%, rgba(45,90,69,0.04) 32%, transparent 32%);
-            background-size: 500px 500px;
-            pointer-events: none;
+            padding: 4rem 2rem;
         }
 
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
             max-width: 1400px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
 
         .category-card {
             background: var(--card-bg);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s;
             border: 3px solid var(--medium-green);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, transparent 0%, rgba(45,90,69,0.05) 100%);
-            opacity: 0;
-            transition: opacity 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
         }
 
         .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-        }
-
-        .category-card:hover::before {
-            opacity: 1;
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
         }
 
         .category-icon {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
 
         .category-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--heading-color);
             margin-bottom: 0.5rem;
             font-weight: 600;
@@ -380,87 +289,103 @@
             font-size: 0.95rem;
         }
 
-        /* Products Section */
+        /* Products Grid */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
         .book-card {
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
             transition: all 0.3s;
             cursor: pointer;
             border: 3px solid var(--medium-green);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            position: relative;
         }
 
         .book-card:hover {
-            transform: translateY(-8px) rotate(-1deg);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #10b981;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            z-index: 10;
+            text-transform: uppercase;
+        }
+
+        .product-badge.sale {
+            background: #ef4444;
         }
 
         .book-cover {
             width: 100%;
             aspect-ratio: 3/4;
-            background: linear-gradient(135deg, #2d5a45, #1e3a2f);
+            background: linear-gradient(135deg, var(--medium-green), var(--dark-forest-green));
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
             color: #fff;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             text-align: center;
             padding: 1.5rem;
         }
 
-        .book-cover::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(143,188,143,0.1) 10px,
-                rgba(143,188,143,0.1) 20px
-            );
-        }
-
         .book-info {
-            padding: 1.5rem;
-            background: var(--primary-bg);
+            padding: 1.3rem;
         }
 
         .book-category {
             color: var(--medium-green);
-            font-size: 0.8rem;
-            font-weight: 600;
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 0.5rem;
         }
 
         .book-title {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             color: var(--heading-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             line-height: 1.3;
         }
 
         .book-author {
             color: var(--secondary-text);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 1rem;
+        }
+
+        .stock-indicator {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+            color: var(--secondary-text);
+        }
+
+        .stock-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #10b981;
         }
 
         .book-footer {
@@ -470,7 +395,7 @@
         }
 
         .book-price {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--medium-green);
         }
@@ -479,12 +404,12 @@
             background: var(--medium-green);
             color: #fff;
             border: none;
-            padding: 0.6rem 1.2rem;
+            padding: 0.6rem 1.3rem;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .add-to-cart:hover {
@@ -492,113 +417,51 @@
             transform: scale(1.05);
         }
 
-        .stock-indicator {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 0.75rem;
-            font-size: 0.8rem;
-            color: var(--secondary-text);
-        }
-
-        .stock-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #10b981;
-        }
-
-        /* About Section */
-        .about-section {
-            background: linear-gradient(135deg, #1e3a2f 0%, #2d5a45 100%);
-            padding: 5rem 2rem;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                radial-gradient(circle at 20% 30%, transparent 40%, rgba(143,188,143,0.05) 40%, rgba(143,188,143,0.05) 42%, transparent 42%),
-                radial-gradient(circle at 80% 70%, transparent 45%, rgba(143,188,143,0.05) 45%, rgba(143,188,143,0.05) 47%, transparent 47%),
-                radial-gradient(circle at 50% 50%, transparent 50%, rgba(143,188,143,0.03) 50%, rgba(143,188,143,0.03) 52%, transparent 52%);
-            background-size: 400px 400px;
-            pointer-events: none;
-        }
-
-        .about-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .about-content h2 {
-            font-size: 2.8rem;
-            color: #fff;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-content p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-            line-height: 1.8;
-        }
-
         /* Newsletter */
         .newsletter-section {
-            padding: 5rem 2rem;
+            padding: 4rem 2rem;
             background: var(--secondary-bg);
         }
 
         .newsletter-content {
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
             text-align: center;
         }
 
         .newsletter-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
         }
 
         .newsletter-content p {
             color: var(--secondary-text);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-bottom: 2rem;
         }
 
         .newsletter-form {
             display: flex;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
+            gap: 0.8rem;
         }
 
         .newsletter-form input {
             flex: 1;
             padding: 1rem 1.5rem;
-            border: 2px solid var(--medium-green);
+            border: 2px solid #ddd;
             border-radius: 50px;
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             outline: none;
+            transition: border-color 0.3s;
         }
 
         .newsletter-form input:focus {
-            border-color: var(--dark-forest-green);
+            border-color: var(--medium-green);
         }
 
         .newsletter-form button {
-            padding: 1rem 2.5rem;
+            padding: 1rem 2.2rem;
             background: var(--medium-green);
             color: #fff;
             border: none;
@@ -606,18 +469,16 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            font-size: 1rem;
-            white-space: nowrap;
+            font-size: 0.95rem;
         }
 
         .newsletter-form button:hover {
             background: var(--dark-forest-green);
-            transform: scale(1.05);
         }
 
         /* Footer */
         footer {
-            background: #001f1e;
+            background: var(--dark-forest-green);
             color: #fff;
             padding: 3rem 2rem 1.5rem;
         }
@@ -634,12 +495,13 @@
         .footer-section h3 {
             margin-bottom: 1rem;
             color: var(--light-sage);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .footer-section p {
-            line-height: 1.8;
-            color: #ccc;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
         }
 
         .footer-section ul {
@@ -647,11 +509,12 @@
         }
 
         .footer-section a {
-            color: #ccc;
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
             line-height: 2.2;
             transition: color 0.3s;
             display: block;
+            font-size: 0.9rem;
         }
 
         .footer-section a:hover {
@@ -661,49 +524,17 @@
         .footer-bottom {
             max-width: 1400px;
             margin: 0 auto;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(143,188,143,0.2);
             text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
         }
 
         .irish-quote {
             color: var(--light-sage);
             font-style: italic;
-            margin-top: 1rem;
-            font-size: 0.95rem;
-        }
-
-        /* Concept Badge */
-        .concept-badge {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--medium-green);
-            color: #fff;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            z-index: 1000;
-        }
-
-        /* Product Badge */
-        .product-badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: #10b981;
-            color: #fff;
-            padding: 6px 14px;
-            border-radius: 25px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            z-index: 10;
-            text-transform: uppercase;
-        }
-
-        .product-badge.sale {
-            background: #ef4444;
+            margin-top: 0.8rem;
         }
 
         /* Responsive */
@@ -716,22 +547,14 @@
                 display: none;
             }
 
-            .search-bar input {
-                width: 200px;
-            }
-
             .footer-content {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
         @media (max-width: 768px) {
-            .header-content {
-                flex-wrap: wrap;
-            }
-
             .hero-section {
-                padding: 4rem 1.5rem;
+                padding: 3rem 1.5rem;
             }
 
             .hero-title {
@@ -752,7 +575,8 @@
             }
 
             .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+                gap: 1.5rem;
             }
 
             .footer-content {
@@ -832,7 +656,7 @@
             <div class="category-card">
                 <div class="category-icon">📚</div>
                 <h3 class="category-title">Leabhair do Pháistí</h3>
-                <p class="category-desc">Scéalta agus eachtraí do gach aois</p>
+                <p class="category-desc">Scéalta agus eachtraí</p>
             </div>
 
             <div class="category-card">
@@ -877,28 +701,24 @@
         <div class="products-grid">
             <div class="book-card">
                 <span class="product-badge">Nua</span>
-                <div class="book-cover">
-                    <span>An Té a Bhíonn ag Gáire</span>
-                </div>
+                <div class="book-cover">An Té a Bhíonn ag Gáire</div>
                 <div class="book-info">
                     <div class="book-category">Filíocht</div>
                     <h3 class="book-title">An Té a Bhíonn ag Gáire</h3>
                     <p class="book-author">Seán Ó Ríordáin</p>
                     <div class="stock-indicator">
                         <span class="stock-dot"></span>
-                        <span>I stoc - Seol inniu</span>
+                        <span>I stoc</span>
                     </div>
                     <div class="book-footer">
-                        <div class="book-price">€18.00</div>
+                        <div class="book-price">€18</div>
                         <button class="add-to-cart">Ceannaigh</button>
                     </div>
                 </div>
             </div>
 
             <div class="book-card">
-                <div class="book-cover">
-                    <span>Gearóid Willie Ó Fátharta</span>
-                </div>
+                <div class="book-cover">Gearóid Willie Ó Fátharta</div>
                 <div class="book-info">
                     <div class="book-category">Beathaisnéis</div>
                     <h3 class="book-title">Gearóid Willie Ó Fátharta</h3>
@@ -908,7 +728,7 @@
                         <span>I stoc</span>
                     </div>
                     <div class="book-footer">
-                        <div class="book-price">€15.00</div>
+                        <div class="book-price">€15</div>
                         <button class="add-to-cart">Ceannaigh</button>
                     </div>
                 </div>
@@ -916,9 +736,7 @@
 
             <div class="book-card">
                 <span class="product-badge sale">-15%</span>
-                <div class="book-cover">
-                    <span>Asailín Abú!</span>
-                </div>
+                <div class="book-cover">Asailín Abú!</div>
                 <div class="book-info">
                     <div class="book-category">Leanaí</div>
                     <h3 class="book-title">Asailín Abú!</h3>
@@ -928,16 +746,14 @@
                         <span>I stoc</span>
                     </div>
                     <div class="book-footer">
-                        <div class="book-price">€12.00</div>
+                        <div class="book-price">€12</div>
                         <button class="add-to-cart">Ceannaigh</button>
                     </div>
                 </div>
             </div>
 
             <div class="book-card">
-                <div class="book-cover">
-                    <span>Ceol na Mara</span>
-                </div>
+                <div class="book-cover">Ceol na Mara</div>
                 <div class="book-info">
                     <div class="book-category">Ficsean</div>
                     <h3 class="book-title">Ceol na Mara</h3>
@@ -947,7 +763,7 @@
                         <span>I stoc</span>
                     </div>
                     <div class="book-footer">
-                        <div class="book-price">€16.95</div>
+                        <div class="book-price">€17</div>
                         <button class="add-to-cart">Ceannaigh</button>
                     </div>
                 </div>
@@ -955,9 +771,7 @@
 
             <div class="book-card">
                 <span class="product-badge">Nua</span>
-                <div class="book-cover">
-                    <span>Cumraíocht</span>
-                </div>
+                <div class="book-cover">Cumraíocht</div>
                 <div class="book-info">
                     <div class="book-category">Filíocht</div>
                     <h3 class="book-title">Cumraíocht</h3>
@@ -967,16 +781,14 @@
                         <span>I stoc</span>
                     </div>
                     <div class="book-footer">
-                        <div class="book-price">€12.00</div>
+                        <div class="book-price">€12</div>
                         <button class="add-to-cart">Ceannaigh</button>
                     </div>
                 </div>
             </div>
 
             <div class="book-card">
-                <div class="book-cover">
-                    <span>Castar Linn É</span>
-                </div>
+                <div class="book-cover">Castar Linn É</div>
                 <div class="book-info">
                     <div class="book-category">Ficsean</div>
                     <h3 class="book-title">Castar Linn É</h3>
@@ -986,16 +798,14 @@
                         <span>I stoc</span>
                     </div>
                     <div class="book-footer">
-                        <div class="book-price">€15.00</div>
+                        <div class="book-price">€15</div>
                         <button class="add-to-cart">Ceannaigh</button>
                     </div>
                 </div>
             </div>
 
             <div class="book-card">
-                <div class="book-cover">
-                    <span>Patsy Kit Ó Murchú</span>
-                </div>
+                <div class="book-cover">Patsy Kit Ó Murchú</div>
                 <div class="book-info">
                     <div class="book-category">Béaloideas</div>
                     <h3 class="book-title">Patsy Kit Ó Murchú</h3>
@@ -1005,16 +815,14 @@
                         <span>I stoc</span>
                     </div>
                     <div class="book-footer">
-                        <div class="book-price">€20.00</div>
+                        <div class="book-price">€20</div>
                         <button class="add-to-cart">Ceannaigh</button>
                     </div>
                 </div>
             </div>
 
             <div class="book-card">
-                <div class="book-cover">
-                    <span>Glór ón Sceilg</span>
-                </div>
+                <div class="book-cover">Glór ón Sceilg</div>
                 <div class="book-info">
                     <div class="book-category">Stair</div>
                     <h3 class="book-title">Glór ón Sceilg</h3>
@@ -1024,7 +832,7 @@
                         <span>I stoc</span>
                     </div>
                     <div class="book-footer">
-                        <div class="book-price">€25.00</div>
+                        <div class="book-price">€25</div>
                         <button class="add-to-cart">Ceannaigh</button>
                     </div>
                 </div>
@@ -1032,23 +840,11 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="about-content">
-            <h2>Fúinn</h2>
-            <p>
-                Ó 1999, táimid ag freastal ar léitheoirí Gaeilge ar fud an domhain.
-                Is é ár misean ár dteanga agus ár litríocht a chaomhnú agus a chur chun cinn
-                trí rochtain éasca a thabhairt ar gach leabhar Gaeilge atá i gcló.
-            </p>
-        </div>
-    </section>
-
     <!-- Newsletter -->
     <section class="newsletter-section">
         <div class="newsletter-content">
             <h2>Cláraigh lenár Nuachtlitir</h2>
-            <p>Faigh eolas faoi leabhair nua, tairiscintí speisialta, agus imeachtaí</p>
+            <p>Faigh eolas faoi leabhair nua agus tairiscintí speisialta</p>
             <form class="newsletter-form">
                 <input type="email" placeholder="Do sheoladh ríomhphoist">
                 <button type="submit">Cláraigh</button>
@@ -1061,10 +857,10 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Litríocht</h3>
-                <p>An siopa leabhar Gaeilge is faide ag fónamh ar líne in Éirinn. Ag freastal ar léitheoirí ó 1999 le seirbhís iontach agus rogha mhór leabhar.</p>
+                <p>An siopa leabhar Gaeilge is faide ag fónamh ar líne in Éirinn. Ag freastal ar léitheoirí ó 1999.</p>
             </div>
             <div class="footer-section">
-                <h3>Naisc Thapa</h3>
+                <h3>Naisc</h3>
                 <ul>
                     <li><a href="#">Catagóirí</a></li>
                     <li><a href="#">Bestsellers</a></li>
@@ -1075,7 +871,6 @@
             <div class="footer-section">
                 <h3>Cúnamh</h3>
                 <ul>
-                    <li><a href="#">Cuntais</a></li>
                     <li><a href="#">Orduithe</a></li>
                     <li><a href="#">Seachadadh</a></li>
                     <li><a href="#">Fillteacháin</a></li>
@@ -1087,7 +882,6 @@
                     <li><a href="#">Fúinn</a></li>
                     <li><a href="#">Teagmháil</a></li>
                     <li><a href="#">Príobháideacht</a></li>
-                    <li><a href="#">Téarmaí</a></li>
                 </ul>
             </div>
         </div>
@@ -1096,7 +890,5 @@
             <p class="irish-quote">"Tír gan teanga, tír gan anam"</p>
         </div>
     </footer>
-
-    <div class="concept-badge">Updated Design with Irish Heritage</div>
 </body>
 </html>
