@@ -163,59 +163,73 @@
         /* Hero Section */
         .hero-section {
             background: linear-gradient(135deg, #1e3a2f 0%, #2d5a45 100%);
-            padding: 5rem 2rem;
+            padding: 4rem 2rem 3rem;
             color: #fff;
         }
 
         .hero-content {
-            max-width: 1400px;
+            max-width: 1000px;
             margin: 0 auto;
-            text-align: center;
+        }
+
+        .language-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 1.2rem;
+            margin-bottom: 2rem;
         }
 
         .accent-text {
             color: var(--light-sage);
         }
 
-        .hero-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 700px;
+        .hero-search {
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .stat {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
+        .hero-search-form {
+            display: flex;
+            background: #fff;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--light-sage);
+        .hero-search-form input {
+            flex: 1;
+            padding: 1.1rem 1.8rem;
+            border: none;
+            font-size: 1rem;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+            color: var(--body-text);
         }
 
-        .stat-label {
-            color: rgba(255,255,255,0.9);
-            margin-top: 0.3rem;
-            font-size: 0.9rem;
+        .hero-search-form button {
+            padding: 1.1rem 2.5rem;
+            background: var(--medium-green);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 1rem;
+        }
+
+        .hero-search-form button:hover {
+            background: var(--dark-forest-green);
         }
 
         /* Main Content */
@@ -372,49 +386,29 @@
             margin-bottom: 1rem;
         }
 
-        .stock-indicator {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 1rem;
-            font-size: 0.8rem;
-            color: var(--secondary-text);
-        }
-
-        .stock-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background-color: #10b981;
-        }
-
-        .book-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         .book-price {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--medium-green);
+            margin-bottom: 0.8rem;
         }
 
         .add-to-cart {
             background: var(--medium-green);
             color: #fff;
             border: none;
-            padding: 0.6rem 1.3rem;
+            padding: 0.75rem;
             border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            width: 100%;
         }
 
         .add-to-cart:hover {
             background: var(--dark-forest-green);
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
 
         /* Newsletter */
@@ -625,22 +619,14 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
-            <h1 class="hero-title">Gach Leabhar <span class="accent-text">Gaeilge</span> i gCló</h1>
-            <p class="hero-subtitle">An siopa leabhar Gaeilge is faide ag fónamh ar líne in Éirinn</p>
+            <div class="language-badge">As Gaeilge</div>
+            <h1 class="hero-title">Gach leabhar <span class="accent-text">Gaeilge</span> i gCló</h1>
 
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">5K+</div>
-                    <div class="stat-label">Teidil</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">25+</div>
-                    <div class="stat-label">Blianta</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">50K+</div>
-                    <div class="stat-label">Custaiméirí</div>
-                </div>
+            <div class="hero-search">
+                <form class="hero-search-form">
+                    <input type="text" placeholder="Cuardaigh leabhair, údair, nó topaicí...">
+                    <button type="submit">Cuardaigh</button>
+                </form>
             </div>
         </div>
     </section>
@@ -706,14 +692,8 @@
                     <div class="book-category">Filíocht</div>
                     <h3 class="book-title">An Té a Bhíonn ag Gáire</h3>
                     <p class="book-author">Seán Ó Ríordáin</p>
-                    <div class="stock-indicator">
-                        <span class="stock-dot"></span>
-                        <span>I stoc</span>
-                    </div>
-                    <div class="book-footer">
-                        <div class="book-price">€18</div>
-                        <button class="add-to-cart">Ceannaigh</button>
-                    </div>
+                    <div class="book-price">€18</div>
+                    <button class="add-to-cart">Ceannaigh</button>
                 </div>
             </div>
 
@@ -723,14 +703,8 @@
                     <div class="book-category">Beathaisnéis</div>
                     <h3 class="book-title">Gearóid Willie Ó Fátharta</h3>
                     <p class="book-author">Gearóid Willie Ó Fátharta</p>
-                    <div class="stock-indicator">
-                        <span class="stock-dot"></span>
-                        <span>I stoc</span>
-                    </div>
-                    <div class="book-footer">
-                        <div class="book-price">€15</div>
-                        <button class="add-to-cart">Ceannaigh</button>
-                    </div>
+                    <div class="book-price">€15</div>
+                    <button class="add-to-cart">Ceannaigh</button>
                 </div>
             </div>
 
@@ -741,14 +715,8 @@
                     <div class="book-category">Leanaí</div>
                     <h3 class="book-title">Asailín Abú!</h3>
                     <p class="book-author">Máire Zepf</p>
-                    <div class="stock-indicator">
-                        <span class="stock-dot"></span>
-                        <span>I stoc</span>
-                    </div>
-                    <div class="book-footer">
-                        <div class="book-price">€12</div>
-                        <button class="add-to-cart">Ceannaigh</button>
-                    </div>
+                    <div class="book-price">€12</div>
+                    <button class="add-to-cart">Ceannaigh</button>
                 </div>
             </div>
 
@@ -758,14 +726,8 @@
                     <div class="book-category">Ficsean</div>
                     <h3 class="book-title">Ceol na Mara</h3>
                     <p class="book-author">Pádraig Ó Siadhail</p>
-                    <div class="stock-indicator">
-                        <span class="stock-dot"></span>
-                        <span>I stoc</span>
-                    </div>
-                    <div class="book-footer">
-                        <div class="book-price">€17</div>
-                        <button class="add-to-cart">Ceannaigh</button>
-                    </div>
+                    <div class="book-price">€17</div>
+                    <button class="add-to-cart">Ceannaigh</button>
                 </div>
             </div>
 
@@ -776,14 +738,8 @@
                     <div class="book-category">Filíocht</div>
                     <h3 class="book-title">Cumraíocht</h3>
                     <p class="book-author">Caitríona Ní Chléirchín</p>
-                    <div class="stock-indicator">
-                        <span class="stock-dot"></span>
-                        <span>I stoc</span>
-                    </div>
-                    <div class="book-footer">
-                        <div class="book-price">€12</div>
-                        <button class="add-to-cart">Ceannaigh</button>
-                    </div>
+                    <div class="book-price">€12</div>
+                    <button class="add-to-cart">Ceannaigh</button>
                 </div>
             </div>
 
@@ -793,14 +749,8 @@
                     <div class="book-category">Ficsean</div>
                     <h3 class="book-title">Castar Linn É</h3>
                     <p class="book-author">Muiris Ó Laoire</p>
-                    <div class="stock-indicator">
-                        <span class="stock-dot"></span>
-                        <span>I stoc</span>
-                    </div>
-                    <div class="book-footer">
-                        <div class="book-price">€15</div>
-                        <button class="add-to-cart">Ceannaigh</button>
-                    </div>
+                    <div class="book-price">€15</div>
+                    <button class="add-to-cart">Ceannaigh</button>
                 </div>
             </div>
 
@@ -810,14 +760,8 @@
                     <div class="book-category">Béaloideas</div>
                     <h3 class="book-title">Patsy Kit Ó Murchú</h3>
                     <p class="book-author">Lorcán S. Ó Treasaigh</p>
-                    <div class="stock-indicator">
-                        <span class="stock-dot"></span>
-                        <span>I stoc</span>
-                    </div>
-                    <div class="book-footer">
-                        <div class="book-price">€20</div>
-                        <button class="add-to-cart">Ceannaigh</button>
-                    </div>
+                    <div class="book-price">€20</div>
+                    <button class="add-to-cart">Ceannaigh</button>
                 </div>
             </div>
 
@@ -827,14 +771,8 @@
                     <div class="book-category">Stair</div>
                     <h3 class="book-title">Glór ón Sceilg</h3>
                     <p class="book-author">Dónall Ó Móráin</p>
-                    <div class="stock-indicator">
-                        <span class="stock-dot"></span>
-                        <span>I stoc</span>
-                    </div>
-                    <div class="book-footer">
-                        <div class="book-price">€25</div>
-                        <button class="add-to-cart">Ceannaigh</button>
-                    </div>
+                    <div class="book-price">€25</div>
+                    <button class="add-to-cart">Ceannaigh</button>
                 </div>
             </div>
         </div>
