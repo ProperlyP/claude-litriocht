@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="ga">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Litríocht - Warm Bookstore Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Core greens */
+            --dark-forest-green: #1e3a2f;
+            --medium-green: #2d5a45;
+            --light-sage: #8fbc8f;
+
+            /* Extended warm palette */
+            --warm-cream: #F9F6F0;
+            --soft-beige: #EFE9DD;
+            --warm-yellow: #F5D547;
+            --burnt-orange: #E67E42;
+            --soft-coral: #F4A690;
+            --light-blue: #D4E9F0;
+            --warm-white: #FFFEF9;
+
+            /* Text colors */
+            --heading-color: #1e3a2f;
+            --body-text: #3d3d3d;
+            --secondary-text: #6B6B6B;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--body-text);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            color: var(--heading-color);
+        }
+
+        /* Header */
+        .site-header {
+            background: linear-gradient(135deg, #1a3028 0%, #234636 50%, #2d5a45 100%);
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* Logo */
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .logo-bar {
+            height: 4px;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        .logo-bar:nth-child(1) { width: 30px; }
+        .logo-bar:nth-child(2) { width: 24px; }
+        .logo-bar:nth-child(3) { width: 18px; }
+
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #fff;
+        }
+
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--warm-yellow);
+        }
+
+        /* Search & Cart */
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .search-bar {
+            display: flex;
+            background: #fff;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .search-bar input {
+            padding: 0.7rem 1.2rem;
+            border: none;
+            font-size: 0.9rem;
+            outline: none;
+            width: 240px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .search-bar button {
+            padding: 0.7rem 1.3rem;
+            background: var(--medium-green);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-bar button:hover {
+            background: var(--dark-forest-green);
+        }
+
+        .cart-btn {
+            background: var(--warm-yellow);
+            color: var(--dark-forest-green);
+            padding: 0.7rem 1.3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .cart-btn:hover {
+            background: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #1a3028 0%, #234636 50%, #2d5a45 100%);
+            padding: 4.5rem 2rem 3.5rem;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .language-badge {
+            display: inline-block;
+            background: rgba(245,213,71,0.2);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(245,213,71,0.4);
+            color: var(--warm-yellow);
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2.5rem;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .accent-text {
+            color: var(--warm-yellow);
+        }
+
+        .hero-search {
+            max-width: 650px;
+        }
+
+        .hero-search-form {
+            display: flex;
+            background: #fff;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .hero-search-form input {
+            flex: 1;
+            padding: 1.2rem 1.8rem;
+            border: none;
+            font-size: 1.05rem;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+            color: var(--body-text);
+        }
+
+        .hero-search-form input::placeholder {
+            color: #999;
+        }
+
+        .hero-search-form button {
+            padding: 1.2rem 2.8rem;
+            background: var(--dark-forest-green);
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.05rem;
+        }
+
+        .hero-search-form button:hover {
+            background: var(--medium-green);
+        }
+
+        /* Featured Banner */
+        .featured-banner {
+            background: var(--warm-yellow);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .featured-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .featured-image {
+            background: linear-gradient(135deg, var(--medium-green), var(--dark-forest-green));
+            aspect-ratio: 3/4;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .featured-info h2 {
+            font-size: 2.5rem;
+            color: var(--dark-forest-green);
+            margin-bottom: 1rem;
+        }
+
+        .featured-info p {
+            font-size: 1.1rem;
+            color: var(--body-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .featured-btn {
+            display: inline-block;
+            background: var(--dark-forest-green);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .featured-btn:hover {
+            background: var(--medium-green);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--heading-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .view-all {
+            display: inline-block;
+            color: var(--medium-green);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--medium-green);
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .section-header .view-all:hover {
+            background: var(--medium-green);
+            color: #fff;
+        }
+
+        /* Categories Section */
+        .categories-section {
+            background: var(--soft-beige);
+            padding: 4rem 2rem;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            background: var(--warm-white);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--medium-green);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-title {
+            font-size: 1.1rem;
+            color: var(--heading-color);
+            font-weight: 600;
+        }
+
+        /* Products Grid */
+        .products-section {
+            background: var(--light-blue);
+            padding: 4rem 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 2rem auto 0;
+        }
+
+        .book-card {
+            background: var(--warm-white);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--burnt-orange);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            z-index: 10;
+            text-transform: uppercase;
+        }
+
+        .product-badge.new {
+            background: var(--medium-green);
+        }
+
+        .product-badge.sale {
+            background: #dc2626;
+        }
+
+        .book-cover {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, var(--medium-green), var(--dark-forest-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .book-info {
+            padding: 1.2rem;
+        }
+
+        .book-category {
+            color: var(--burnt-orange);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            margin-bottom: 0.4rem;
+            line-height: 1.3;
+        }
+
+        .book-author {
+            color: var(--secondary-text);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .book-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark-forest-green);
+            margin-bottom: 0.8rem;
+        }
+
+        .add-to-cart {
+            background: var(--medium-green);
+            color: #fff;
+            border: none;
+            padding: 0.7rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+
+        .add-to-cart:hover {
+            background: var(--dark-forest-green);
+        }
+
+        /* Bestsellers Section */
+        .bestsellers-section {
+            padding: 4rem 2rem;
+            background: var(--warm-cream);
+        }
+
+        /* Newsletter */
+        .newsletter-section {
+            padding: 4rem 2rem;
+            background: var(--soft-coral);
+        }
+
+        .newsletter-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-forest-green);
+        }
+
+        .newsletter-content p {
+            color: var(--body-text);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1.1rem 1.5rem;
+            border: 2px solid var(--dark-forest-green);
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            background: var(--warm-white);
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--medium-green);
+        }
+
+        .newsletter-form button {
+            padding: 1.1rem 2.5rem;
+            background: var(--dark-forest-green);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--medium-green);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-forest-green);
+            color: rgba(255,255,255,0.9);
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--warm-yellow);
+            font-size: 1.1rem;
+        }
+
+        .footer-section p {
+            line-height: 1.7;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            line-height: 2.2;
+            transition: color 0.3s;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--warm-yellow);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .irish-quote {
+            color: var(--warm-yellow);
+            font-style: italic;
+            margin-top: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .featured-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 3rem 1.5rem 2.5rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .featured-info h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <a href="#" class="site-logo">
+                <div class="logo-icon">
+                    <div class="logo-bar"></div>
+                    <div class="logo-bar"></div>
+                    <div class="logo-bar"></div>
+                </div>
+                <span class="logo-text">LITRÍOCHT</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Baile</a></li>
+                    <li><a href="#">Leanaí</a></li>
+                    <li><a href="#">Ficsean</a></li>
+                    <li><a href="#">Stair</a></li>
+                    <li><a href="#">Foclóirí</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="Cuardaigh leabhair...">
+                    <button>🔍</button>
+                </div>
+                <a href="#" class="cart-btn">🛒 €0.00</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="language-badge">As Gaeilge</div>
+            <h1 class="hero-title">Gach leabhar <span class="accent-text">Gaeilge</span> i gCló</h1>
+
+            <div class="hero-search">
+                <form class="hero-search-form">
+                    <input type="text" placeholder="Cuardaigh leabhair, údair, nó topaicí...">
+                    <button type="submit">Cuardaigh</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Banner -->
+    <section class="featured-banner">
+        <div class="featured-content">
+            <div class="featured-image">
+                Leabhar na Míosa<br>Márta 2026
+            </div>
+            <div class="featured-info">
+                <h2>An Té a Bhíonn ag Gáire</h2>
+                <p>Bailiúchán iontach filíochta ó Sheán Ó Ríordáin, file is mó cáil sa Ghaeilge nua-aimseartha. Léirmheas den scoth ó chriticeoir litríochta ar fud na tíre.</p>
+                <a href="#" class="featured-btn">Léigh Tuilleadh</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="section-header">
+            <h2>Brabhsáil de réir Catagóra</h2>
+        </div>
+
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">📚</div>
+                <h3 class="category-title">Leanaí</h3>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">✍️</div>
+                <h3 class="category-title">Ficsean</h3>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">📖</div>
+                <h3 class="category-title">Filíocht</h3>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🎓</div>
+                <h3 class="category-title">Oideachas</h3>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">📕</div>
+                <h3 class="category-title">Foclóirí</h3>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🏛️</div>
+                <h3 class="category-title">Stair</h3>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🎵</div>
+                <h3 class="category-title">Ceol</h3>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🌍</div>
+                <h3 class="category-title">Béaloideas</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="section-header">
+            <h2>Leabhair Nua</h2>
+            <a href="#" class="view-all">Féach Uile →</a>
+        </div>
+
+        <div class="products-grid">
+            <div class="book-card">
+                <span class="product-badge new">Nua</span>
+                <div class="book-cover">An Té a Bhíonn ag Gáire</div>
+                <div class="book-info">
+                    <div class="book-category">Filíocht</div>
+                    <h3 class="book-title">An Té a Bhíonn ag Gáire</h3>
+                    <p class="book-author">Seán Ó Ríordáin</p>
+                    <div class="book-price">€18</div>
+                    <button class="add-to-cart">Ceannaigh</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">Gearóid Willie</div>
+                <div class="book-info">
+                    <div class="book-category">Beathaisnéis</div>
+                    <h3 class="book-title">Gearóid Willie Ó Fátharta</h3>
+                    <p class="book-author">Gearóid Willie</p>
+                    <div class="book-price">€15</div>
+                    <button class="add-to-cart">Ceannaigh</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <span class="product-badge sale">-15%</span>
+                <div class="book-cover">Asailín Abú!</div>
+                <div class="book-info">
+                    <div class="book-category">Leanaí</div>
+                    <h3 class="book-title">Asailín Abú!</h3>
+                    <p class="book-author">Máire Zepf</p>
+                    <div class="book-price">€12</div>
+                    <button class="add-to-cart">Ceannaigh</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">Ceol na Mara</div>
+                <div class="book-info">
+                    <div class="book-category">Ficsean</div>
+                    <h3 class="book-title">Ceol na Mara</h3>
+                    <p class="book-author">Pádraig Ó Siadhail</p>
+                    <div class="book-price">€17</div>
+                    <button class="add-to-cart">Ceannaigh</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <span class="product-badge new">Nua</span>
+                <div class="book-cover">Cumraíocht</div>
+                <div class="book-info">
+                    <div class="book-category">Filíocht</div>
+                    <h3 class="book-title">Cumraíocht</h3>
+                    <p class="book-author">Caitríona Ní Chléirchín</p>
+                    <div class="book-price">€12</div>
+                    <button class="add-to-cart">Ceannaigh</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">Castar Linn É</div>
+                <div class="book-info">
+                    <div class="book-category">Ficsean</div>
+                    <h3 class="book-title">Castar Linn É</h3>
+                    <p class="book-author">Muiris Ó Laoire</p>
+                    <div class="book-price">€15</div>
+                    <button class="add-to-cart">Ceannaigh</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bestsellers Section -->
+    <section class="bestsellers-section">
+        <div class="section-header">
+            <h2>Bestsellers</h2>
+            <a href="#" class="view-all">Féach Uile →</a>
+        </div>
+
+        <div class="products-grid">
+            <div class="book-card">
+                <span class="product-badge">Bestseller</span>
+                <div class="book-cover">Patsy Kit Ó Murchú</div>
+                <div class="book-info">
+                    <div class="book-category">Béaloideas</div>
+                    <h3 class="book-title">Patsy Kit Ó Murchú</h3>
+                    <p class="book-author">Lorcán S. Ó Treasaigh</p>
+                    <div class="book-price">€20</div>
+                    <button class="add-to-cart">Ceannaigh</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <span class="product-badge">Bestseller</span>
+                <div class="book-cover">Glór ón Sceilg</div>
+                <div class="book-info">
+                    <div class="book-category">Stair</div>
+                    <h3 class="book-title">Glór ón Sceilg</h3>
+                    <p class="book-author">Dónall Ó Móráin</p>
+                    <div class="book-price">€25</div>
+                    <button class="add-to-cart">Ceannaigh</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">Scéalta Grá</div>
+                <div class="book-info">
+                    <div class="book-category">Ficsean</div>
+                    <h3 class="book-title">Scéalta Grá</h3>
+                    <p class="book-author">Pádraig Mac Piarais</p>
+                    <div class="book-price">€14</div>
+                    <button class="add-to-cart">Ceannaigh</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">Béaloideas</div>
+                <div class="book-info">
+                    <div class="book-category">Cultúr</div>
+                    <h3 class="book-title">Béaloideas na hÉireann</h3>
+                    <p class="book-author">Séamas Ó Catháin</p>
+                    <div class="book-price">€22</div>
+                    <button class="add-to-cart">Ceannaigh</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">Peig</div>
+                <div class="book-info">
+                    <div class="book-category">Clasaicí</div>
+                    <h3 class="book-title">Peig</h3>
+                    <p class="book-author">Peig Sayers</p>
+                    <div class="book-price">€16</div>
+                    <button class="add-to-cart">Ceannaigh</button>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">Cré na Cille</div>
+                <div class="book-info">
+                    <div class="book-category">Clasaicí</div>
+                    <h3 class="book-title">Cré na Cille</h3>
+                    <p class="book-author">Máirtín Ó Cadhain</p>
+                    <div class="book-price">€18</div>
+                    <button class="add-to-cart">Ceannaigh</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="newsletter-content">
+            <h2>Cláraigh lenár Nuachtlitir</h2>
+            <p>Faigh eolas faoi leabhair nua, tairiscintí speisialta, agus imeachtaí</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Do sheoladh ríomhphoist">
+                <button type="submit">Cláraigh</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Litríocht</h3>
+                <p>An siopa leabhar Gaeilge is faide ag fónamh ar líne in Éirinn. Ag freastal ar léitheoirí ó 1999.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Naisc</h3>
+                <ul>
+                    <li><a href="#">Catagóirí</a></li>
+                    <li><a href="#">Bestsellers</a></li>
+                    <li><a href="#">Nua Amach</a></li>
+                    <li><a href="#">Tairiscintí</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Cúnamh</h3>
+                <ul>
+                    <li><a href="#">Orduithe</a></li>
+                    <li><a href="#">Seachadadh</a></li>
+                    <li><a href="#">Fillteacháin</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Eolas</h3>
+                <ul>
+                    <li><a href="#">Fúinn</a></li>
+                    <li><a href="#">Teagmháil</a></li>
+                    <li><a href="#">Príobháideacht</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Litríocht. Gach ceart ar cosaint.</p>
+            <p class="irish-quote">"Tír gan teanga, tír gan anam"</p>
+        </div>
+    </footer>
+</body>
+</html>
