@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         * {
             margin: 0;
@@ -20,10 +21,11 @@
             --medium-green: #2d5a45;
             --light-sage: #8fbc8f;
 
-            /* Extended warm palette */
+            /* Extended warm palette with gold */
             --warm-cream: #F9F6F0;
             --soft-beige: #EFE9DD;
-            --warm-yellow: #F5D547;
+            --rich-gold: #D4AF37;
+            --pale-gold: #E8D4A0;
             --burnt-orange: #E67E42;
             --soft-coral: #F4A690;
             --light-blue: #D4E9F0;
@@ -113,7 +115,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--warm-yellow);
+            color: var(--rich-gold);
         }
 
         /* Search & Cart */
@@ -126,7 +128,7 @@
         .search-bar {
             display: flex;
             background: #fff;
-            border-radius: 50px;
+            border-radius: 6px;
             overflow: hidden;
         }
 
@@ -154,10 +156,10 @@
         }
 
         .cart-btn {
-            background: var(--warm-yellow);
+            background: var(--rich-gold);
             color: var(--dark-forest-green);
             padding: 0.7rem 1.3rem;
-            border-radius: 50px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 700;
             font-size: 0.9rem;
@@ -197,14 +199,14 @@
 
         .language-badge {
             display: inline-block;
-            background: rgba(245,213,71,0.2);
+            background: rgba(212,175,55,0.2);
             padding: 0.5rem 1.2rem;
-            border-radius: 25px;
+            border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 2rem;
-            border: 1px solid rgba(245,213,71,0.4);
-            color: var(--warm-yellow);
+            border: 1px solid rgba(212,175,55,0.4);
+            color: var(--rich-gold);
         }
 
         .hero-title {
@@ -217,7 +219,7 @@
         }
 
         .accent-text {
-            color: var(--warm-yellow);
+            color: var(--rich-gold);
         }
 
         .hero-search {
@@ -227,7 +229,7 @@
         .hero-search-form {
             display: flex;
             background: #fff;
-            border-radius: 50px;
+            border-radius: 6px;
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
@@ -263,7 +265,7 @@
 
         /* Featured Banner */
         .featured-banner {
-            background: var(--warm-yellow);
+            background: var(--rich-gold);
             padding: 3rem 2rem;
             margin: 3rem 0;
         }
@@ -280,7 +282,7 @@
         .featured-image {
             background: linear-gradient(135deg, var(--medium-green), var(--dark-forest-green));
             aspect-ratio: 3/4;
-            border-radius: 12px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -310,7 +312,7 @@
             background: var(--dark-forest-green);
             color: #fff;
             padding: 1rem 2.5rem;
-            border-radius: 8px;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
@@ -348,7 +350,7 @@
             margin-top: 1rem;
             padding: 0.5rem 1.5rem;
             border: 2px solid var(--medium-green);
-            border-radius: 25px;
+            border-radius: 6px;
             transition: all 0.3s;
         }
 
@@ -373,7 +375,7 @@
 
         .category-card {
             background: var(--warm-white);
-            border-radius: 12px;
+            border-radius: 4px;
             padding: 2rem 1.5rem;
             text-align: center;
             cursor: pointer;
@@ -390,6 +392,11 @@
         .category-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            color: var(--medium-green);
+        }
+
+        .category-icon i {
+            display: inline-block;
         }
 
         .category-title {
@@ -414,7 +421,7 @@
 
         .book-card {
             background: var(--warm-white);
-            border-radius: 12px;
+            border-radius: 4px;
             overflow: hidden;
             transition: all 0.3s;
             cursor: pointer;
@@ -434,7 +441,7 @@
             background: var(--burnt-orange);
             color: #fff;
             padding: 6px 12px;
-            border-radius: 20px;
+            border-radius: 4px;
             font-size: 0.7rem;
             font-weight: 700;
             z-index: 10;
@@ -502,7 +509,7 @@
             color: #fff;
             border: none;
             padding: 0.7rem;
-            border-radius: 8px;
+            border-radius: 4px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
@@ -553,7 +560,7 @@
             flex: 1;
             padding: 1.1rem 1.5rem;
             border: 2px solid var(--dark-forest-green);
-            border-radius: 50px;
+            border-radius: 6px;
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
             outline: none;
@@ -569,7 +576,7 @@
             background: var(--dark-forest-green);
             color: #fff;
             border: none;
-            border-radius: 50px;
+            border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
@@ -598,7 +605,7 @@
 
         .footer-section h3 {
             margin-bottom: 1rem;
-            color: var(--warm-yellow);
+            color: var(--rich-gold);
             font-size: 1.1rem;
         }
 
@@ -621,7 +628,7 @@
         }
 
         .footer-section a:hover {
-            color: var(--warm-yellow);
+            color: var(--rich-gold);
         }
 
         .footer-bottom {
@@ -634,7 +641,7 @@
         }
 
         .irish-quote {
-            color: var(--warm-yellow);
+            color: var(--rich-gold);
             font-style: italic;
             margin-top: 0.8rem;
         }
@@ -720,9 +727,9 @@
             <div class="header-actions">
                 <div class="search-bar">
                     <input type="text" placeholder="Cuardaigh leabhair...">
-                    <button>🔍</button>
+                    <button><i data-lucide="search" style="width: 18px; height: 18px;"></i></button>
                 </div>
-                <a href="#" class="cart-btn">🛒 €0.00</a>
+                <a href="#" class="cart-btn"><i data-lucide="shopping-cart" style="width: 18px; height: 18px; display: inline-block; vertical-align: middle;"></i> €0.00</a>
             </div>
         </div>
     </header>
@@ -764,42 +771,42 @@
 
         <div class="categories-grid">
             <div class="category-card">
-                <div class="category-icon">📚</div>
+                <div class="category-icon"><i data-lucide="baby" style="width: 40px; height: 40px; stroke-width: 1.5;"></i></div>
                 <h3 class="category-title">Leanaí</h3>
             </div>
 
             <div class="category-card">
-                <div class="category-icon">✍️</div>
+                <div class="category-icon"><i data-lucide="pen-tool" style="width: 40px; height: 40px; stroke-width: 1.5;"></i></div>
                 <h3 class="category-title">Ficsean</h3>
             </div>
 
             <div class="category-card">
-                <div class="category-icon">📖</div>
+                <div class="category-icon"><i data-lucide="book-open" style="width: 40px; height: 40px; stroke-width: 1.5;"></i></div>
                 <h3 class="category-title">Filíocht</h3>
             </div>
 
             <div class="category-card">
-                <div class="category-icon">🎓</div>
+                <div class="category-icon"><i data-lucide="graduation-cap" style="width: 40px; height: 40px; stroke-width: 1.5;"></i></div>
                 <h3 class="category-title">Oideachas</h3>
             </div>
 
             <div class="category-card">
-                <div class="category-icon">📕</div>
+                <div class="category-icon"><i data-lucide="book" style="width: 40px; height: 40px; stroke-width: 1.5;"></i></div>
                 <h3 class="category-title">Foclóirí</h3>
             </div>
 
             <div class="category-card">
-                <div class="category-icon">🏛️</div>
+                <div class="category-icon"><i data-lucide="landmark" style="width: 40px; height: 40px; stroke-width: 1.5;"></i></div>
                 <h3 class="category-title">Stair</h3>
             </div>
 
             <div class="category-card">
-                <div class="category-icon">🎵</div>
+                <div class="category-icon"><i data-lucide="music" style="width: 40px; height: 40px; stroke-width: 1.5;"></i></div>
                 <h3 class="category-title">Ceol</h3>
             </div>
 
             <div class="category-card">
-                <div class="category-icon">🌍</div>
+                <div class="category-icon"><i data-lucide="globe" style="width: 40px; height: 40px; stroke-width: 1.5;"></i></div>
                 <h3 class="category-title">Béaloideas</h3>
             </div>
         </div>
@@ -1012,5 +1019,10 @@
             <p class="irish-quote">"Tír gan teanga, tír gan anam"</p>
         </div>
     </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
