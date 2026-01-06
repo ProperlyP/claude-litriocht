@@ -16,10 +16,11 @@
         }
 
         :root {
-            /* Core greens */
-            --dark-forest-green: #1e3a2f;
-            --medium-green: #2d5a45;
-            --light-sage: #8fbc8f;
+            /* Core teal colors from logo */
+            --primary-teal: #1D5C5C;
+            --medium-teal: #2D6A6A;
+            --light-teal: #4A8585;
+            --pale-teal: #7AA9A9;
 
             /* Extended warm palette with gold */
             --warm-cream: #F9F6F0;
@@ -32,7 +33,7 @@
             --warm-white: #FFFEF9;
 
             /* Text colors */
-            --heading-color: #1e3a2f;
+            --heading-color: #1D5C5C;
             --body-text: #3d3d3d;
             --secondary-text: #6B6B6B;
         }
@@ -51,7 +52,7 @@
 
         /* Header */
         .site-header {
-            background: linear-gradient(135deg, #1a3028 0%, #234636 50%, #2d5a45 100%);
+            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--medium-teal) 50%, var(--light-teal) 100%);
             padding: 1.2rem 2rem;
             position: sticky;
             top: 0;
@@ -79,24 +80,41 @@
         .logo-icon {
             display: flex;
             flex-direction: column;
-            gap: 3px;
-        }
-
-        .logo-bar {
-            height: 4px;
+            gap: 2px;
+            padding: 8px 6px;
             background: #fff;
             border-radius: 2px;
         }
 
-        .logo-bar:nth-child(1) { width: 30px; }
-        .logo-bar:nth-child(2) { width: 24px; }
-        .logo-bar:nth-child(3) { width: 18px; }
+        .logo-bar {
+            height: 3px;
+            background: var(--primary-teal);
+            border-radius: 1px;
+        }
+
+        .logo-bar:nth-child(1) { width: 20px; }
+        .logo-bar:nth-child(2) { width: 20px; }
+        .logo-bar:nth-child(3) { width: 20px; }
+
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+        }
 
         .logo-text {
-            font-size: 1.6rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
             color: #fff;
+            line-height: 1;
+        }
+
+        .logo-tagline {
+            font-size: 0.65rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.85);
+            letter-spacing: 0.3px;
         }
 
         /* Navigation */
@@ -143,7 +161,7 @@
 
         .search-bar button {
             padding: 0.7rem 1.3rem;
-            background: var(--medium-green);
+            background: var(--medium-teal);
             border: none;
             color: #fff;
             font-weight: 600;
@@ -152,12 +170,12 @@
         }
 
         .search-bar button:hover {
-            background: var(--dark-forest-green);
+            background: var(--primary-teal);
         }
 
         .cart-btn {
             background: var(--rich-gold);
-            color: var(--dark-forest-green);
+            color: var(--primary-teal);
             padding: 0.7rem 1.3rem;
             border-radius: 6px;
             text-decoration: none;
@@ -173,7 +191,7 @@
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, #1a3028 0%, #234636 50%, #2d5a45 100%);
+            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--medium-teal) 50%, var(--light-teal) 100%);
             padding: 4.5rem 2rem 3.5rem;
             color: #fff;
             position: relative;
@@ -250,7 +268,7 @@
 
         .hero-search-form button {
             padding: 1.2rem 2.8rem;
-            background: var(--dark-forest-green);
+            background: var(--primary-teal);
             border: none;
             color: #fff;
             font-weight: 700;
@@ -260,7 +278,7 @@
         }
 
         .hero-search-form button:hover {
-            background: var(--medium-green);
+            background: var(--medium-teal);
         }
 
         /* Featured Banner */
@@ -280,7 +298,7 @@
         }
 
         .featured-image {
-            background: linear-gradient(135deg, var(--medium-green), var(--dark-forest-green));
+            background: linear-gradient(135deg, var(--medium-teal), var(--primary-teal));
             aspect-ratio: 3/4;
             border-radius: 4px;
             display: flex;
@@ -296,8 +314,9 @@
 
         .featured-info h2 {
             font-size: 2.5rem;
-            color: var(--dark-forest-green);
+            color: var(--primary-teal);
             margin-bottom: 1rem;
+            font-weight: 700;
         }
 
         .featured-info p {
@@ -309,7 +328,7 @@
 
         .featured-btn {
             display: inline-block;
-            background: var(--dark-forest-green);
+            background: var(--primary-teal);
             color: #fff;
             padding: 1rem 2.5rem;
             border-radius: 4px;
@@ -319,7 +338,7 @@
         }
 
         .featured-btn:hover {
-            background: var(--medium-green);
+            background: var(--medium-teal);
             transform: translateY(-2px);
         }
 
@@ -344,18 +363,18 @@
 
         .section-header .view-all {
             display: inline-block;
-            color: var(--medium-green);
+            color: var(--medium-teal);
             text-decoration: none;
             font-weight: 600;
             margin-top: 1rem;
             padding: 0.5rem 1.5rem;
-            border: 2px solid var(--medium-green);
+            border: 2px solid var(--medium-teal);
             border-radius: 6px;
             transition: all 0.3s;
         }
 
         .section-header .view-all:hover {
-            background: var(--medium-green);
+            background: var(--medium-teal);
             color: #fff;
         }
 
@@ -385,14 +404,14 @@
 
         .category-card:hover {
             transform: translateY(-5px);
-            border-color: var(--medium-green);
+            border-color: var(--medium-teal);
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .category-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--medium-green);
+            color: var(--medium-teal);
         }
 
         .category-icon i {
@@ -449,7 +468,7 @@
         }
 
         .product-badge.new {
-            background: var(--medium-green);
+            background: var(--medium-teal);
         }
 
         .product-badge.sale {
@@ -459,7 +478,7 @@
         .book-cover {
             width: 100%;
             aspect-ratio: 3/4;
-            background: linear-gradient(135deg, var(--medium-green), var(--dark-forest-green));
+            background: linear-gradient(135deg, var(--medium-teal), var(--primary-teal));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -500,12 +519,12 @@
         .book-price {
             font-size: 1.4rem;
             font-weight: 700;
-            color: var(--dark-forest-green);
+            color: var(--primary-teal);
             margin-bottom: 0.8rem;
         }
 
         .add-to-cart {
-            background: var(--medium-green);
+            background: var(--medium-teal);
             color: #fff;
             border: none;
             padding: 0.7rem;
@@ -518,7 +537,7 @@
         }
 
         .add-to-cart:hover {
-            background: var(--dark-forest-green);
+            background: var(--primary-teal);
         }
 
         /* Bestsellers Section */
@@ -542,7 +561,8 @@
         .newsletter-content h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--dark-forest-green);
+            color: var(--primary-teal);
+            font-weight: 700;
         }
 
         .newsletter-content p {
@@ -559,7 +579,7 @@
         .newsletter-form input {
             flex: 1;
             padding: 1.1rem 1.5rem;
-            border: 2px solid var(--dark-forest-green);
+            border: 2px solid var(--primary-teal);
             border-radius: 6px;
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
@@ -568,12 +588,12 @@
         }
 
         .newsletter-form input:focus {
-            border-color: var(--medium-green);
+            border-color: var(--medium-teal);
         }
 
         .newsletter-form button {
             padding: 1.1rem 2.5rem;
-            background: var(--dark-forest-green);
+            background: var(--primary-teal);
             color: #fff;
             border: none;
             border-radius: 6px;
@@ -584,12 +604,12 @@
         }
 
         .newsletter-form button:hover {
-            background: var(--medium-green);
+            background: var(--medium-teal);
         }
 
         /* Footer */
         footer {
-            background: var(--dark-forest-green);
+            background: var(--primary-teal);
             color: rgba(255,255,255,0.9);
             padding: 3rem 2rem 1.5rem;
         }
@@ -711,7 +731,10 @@
                     <div class="logo-bar"></div>
                     <div class="logo-bar"></div>
                 </div>
-                <span class="logo-text">LITRÍOCHT</span>
+                <div class="logo-text-container">
+                    <span class="logo-text">LITRÍOCHT</span>
+                    <span class="logo-tagline">Gach leabhar Gaeilge i gCló</span>
+                </div>
             </a>
 
             <nav>
