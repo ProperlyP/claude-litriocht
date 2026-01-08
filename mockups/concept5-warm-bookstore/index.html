@@ -16,24 +16,29 @@
         }
 
         :root {
-            /* New vibrant color palette */
-            --primary-blue: #2EA7F2;
-            --bright-green: #76D95B;
-            --lime-green: #96D966;
-            --golden-yellow: #F2CD13;
-            --coral-red: #F2695C;
+            /* Primary green palette - sophisticated bookstore */
+            --deep-forest: #1e4d3a;
+            --medium-green: #2d6a4f;
+            --sage-green: #52796f;
+            --soft-mint: #84a98c;
 
-            /* Logo teal (for logo itself) */
+            /* Accent colors - refined */
+            --warm-gold: #d4a574;
+            --burnt-sienna: #c77350;
+            --soft-blue: #6b9ac4;
+
+            /* Logo teal */
             --logo-teal: #1D5C5C;
 
             /* Neutral palette */
-            --warm-cream: #F9F6F0;
-            --soft-beige: #EFE9DD;
-            --light-gray: #F5F5F5;
-            --warm-white: #FFFEF9;
+            --warm-cream: #f8f5f0;
+            --light-sage: #e8ede8;
+            --soft-beige: #ede6db;
+            --warm-white: #fefdfb;
+            --light-gray: #f5f5f5;
 
             /* Text colors */
-            --heading-color: #2C3E50;
+            --heading-color: #2a3b2e;
             --body-text: #3d3d3d;
             --secondary-text: #6B6B6B;
         }
@@ -58,7 +63,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-bottom: 3px solid var(--primary-blue);
+            border-bottom: 3px solid var(--medium-green);
         }
 
         .header-content {
@@ -134,7 +139,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary-blue);
+            color: var(--medium-green);
         }
 
         /* Search & Cart */
@@ -154,7 +159,7 @@
         }
 
         .search-bar:focus-within {
-            border-color: var(--primary-blue);
+            border-color: var(--medium-green);
         }
 
         .search-bar input {
@@ -168,7 +173,7 @@
 
         .search-bar button {
             padding: 0.7rem 1.3rem;
-            background: var(--primary-blue);
+            background: var(--medium-green);
             border: none;
             color: #fff;
             font-weight: 600;
@@ -177,12 +182,12 @@
         }
 
         .search-bar button:hover {
-            background: var(--bright-green);
+            background: var(--deep-forest);
         }
 
         .cart-btn {
-            background: var(--golden-yellow);
-            color: var(--heading-color);
+            background: var(--warm-gold);
+            color: #fff;
             padding: 0.7rem 1.3rem;
             border-radius: 6px;
             text-decoration: none;
@@ -198,7 +203,7 @@
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--bright-green) 100%);
+            background: linear-gradient(135deg, var(--deep-forest) 0%, var(--medium-green) 50%, var(--sage-green) 100%);
             padding: 4.5rem 2rem 3.5rem;
             color: #fff;
             position: relative;
@@ -224,14 +229,14 @@
 
         .language-badge {
             display: inline-block;
-            background: rgba(242,205,19,0.25);
+            background: rgba(212,165,116,0.2);
             padding: 0.5rem 1.2rem;
             border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 2rem;
-            border: 1px solid rgba(242,205,19,0.5);
-            color: var(--golden-yellow);
+            border: 1px solid rgba(212,165,116,0.4);
+            color: var(--warm-gold);
         }
 
         .hero-title {
@@ -244,7 +249,7 @@
         }
 
         .accent-text {
-            color: var(--golden-yellow);
+            color: var(--warm-gold);
         }
 
         .hero-search {
@@ -275,9 +280,9 @@
 
         .hero-search-form button {
             padding: 1.2rem 2.8rem;
-            background: var(--golden-yellow);
+            background: var(--warm-gold);
             border: none;
-            color: var(--heading-color);
+            color: #fff;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
@@ -285,12 +290,12 @@
         }
 
         .hero-search-form button:hover {
-            background: var(--lime-green);
+            background: var(--burnt-sienna);
         }
 
         /* Featured Banner */
         .featured-banner {
-            background: var(--lime-green);
+            background: var(--soft-mint);
             padding: 3rem 2rem;
             margin: 3rem 0;
         }
@@ -305,7 +310,7 @@
         }
 
         .featured-image {
-            background: linear-gradient(135deg, var(--primary-blue), var(--bright-green));
+            background: linear-gradient(135deg, var(--medium-green), var(--sage-green));
             aspect-ratio: 3/4;
             border-radius: 4px;
             display: flex;
@@ -321,7 +326,7 @@
 
         .featured-info h2 {
             font-size: 2.5rem;
-            color: var(--heading-color);
+            color: var(--deep-forest);
             margin-bottom: 1rem;
             font-weight: 700;
         }
@@ -335,7 +340,7 @@
 
         .featured-btn {
             display: inline-block;
-            background: var(--primary-blue);
+            background: var(--medium-green);
             color: #fff;
             padding: 1rem 2.5rem;
             border-radius: 4px;
@@ -345,7 +350,7 @@
         }
 
         .featured-btn:hover {
-            background: var(--heading-color);
+            background: var(--deep-forest);
             transform: translateY(-2px);
         }
 
@@ -370,24 +375,24 @@
 
         .section-header .view-all {
             display: inline-block;
-            color: var(--primary-blue);
+            color: var(--medium-green);
             text-decoration: none;
             font-weight: 600;
             margin-top: 1rem;
             padding: 0.5rem 1.5rem;
-            border: 2px solid var(--primary-blue);
+            border: 2px solid var(--medium-green);
             border-radius: 6px;
             transition: all 0.3s;
         }
 
         .section-header .view-all:hover {
-            background: var(--primary-blue);
+            background: var(--medium-green);
             color: #fff;
         }
 
         /* Categories Section */
         .categories-section {
-            background: var(--soft-beige);
+            background: var(--light-sage);
             padding: 4rem 2rem;
         }
 
@@ -411,14 +416,14 @@
 
         .category-card:hover {
             transform: translateY(-5px);
-            border-color: var(--primary-blue);
+            border-color: var(--medium-green);
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         .category-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--bright-green);
+            color: var(--sage-green);
         }
 
         .category-icon i {
@@ -433,7 +438,7 @@
 
         /* Products Grid */
         .products-section {
-            background: var(--light-blue);
+            background: var(--soft-beige);
             padding: 4rem 2rem;
         }
 
@@ -464,7 +469,7 @@
             position: absolute;
             top: 12px;
             right: 12px;
-            background: var(--coral-red);
+            background: var(--burnt-sienna);
             color: #fff;
             padding: 6px 12px;
             border-radius: 4px;
@@ -475,17 +480,17 @@
         }
 
         .product-badge.new {
-            background: var(--bright-green);
+            background: var(--sage-green);
         }
 
         .product-badge.sale {
-            background: var(--coral-red);
+            background: var(--burnt-sienna);
         }
 
         .book-cover {
             width: 100%;
             aspect-ratio: 3/4;
-            background: linear-gradient(135deg, var(--primary-blue), var(--bright-green));
+            background: linear-gradient(135deg, var(--medium-green), var(--sage-green));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -501,7 +506,7 @@
         }
 
         .book-category {
-            color: var(--coral-red);
+            color: var(--burnt-sienna);
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -526,12 +531,12 @@
         .book-price {
             font-size: 1.4rem;
             font-weight: 700;
-            color: var(--primary-blue);
+            color: var(--medium-green);
             margin-bottom: 0.8rem;
         }
 
         .add-to-cart {
-            background: var(--primary-blue);
+            background: var(--medium-green);
             color: #fff;
             border: none;
             padding: 0.7rem;
@@ -544,7 +549,7 @@
         }
 
         .add-to-cart:hover {
-            background: var(--bright-green);
+            background: var(--deep-forest);
         }
 
         /* Bestsellers Section */
@@ -556,7 +561,7 @@
         /* Newsletter */
         .newsletter-section {
             padding: 4rem 2rem;
-            background: var(--soft-coral);
+            background: var(--warm-cream);
         }
 
         .newsletter-content {
@@ -586,7 +591,7 @@
         .newsletter-form input {
             flex: 1;
             padding: 1.1rem 1.5rem;
-            border: 2px solid var(--primary-blue);
+            border: 2px solid var(--medium-green);
             border-radius: 6px;
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
@@ -595,12 +600,12 @@
         }
 
         .newsletter-form input:focus {
-            border-color: var(--bright-green);
+            border-color: var(--sage-green);
         }
 
         .newsletter-form button {
             padding: 1.1rem 2.5rem;
-            background: var(--primary-blue);
+            background: var(--medium-green);
             color: #fff;
             border: none;
             border-radius: 6px;
@@ -611,12 +616,12 @@
         }
 
         .newsletter-form button:hover {
-            background: var(--bright-green);
+            background: var(--deep-forest);
         }
 
         /* Footer */
         footer {
-            background: var(--heading-color);
+            background: var(--deep-forest);
             color: rgba(255,255,255,0.9);
             padding: 3rem 2rem 1.5rem;
         }
@@ -632,7 +637,7 @@
 
         .footer-section h3 {
             margin-bottom: 1rem;
-            color: var(--golden-yellow);
+            color: var(--warm-gold);
             font-size: 1.1rem;
         }
 
@@ -655,7 +660,7 @@
         }
 
         .footer-section a:hover {
-            color: var(--golden-yellow);
+            color: var(--soft-mint);
         }
 
         .footer-bottom {
@@ -668,7 +673,7 @@
         }
 
         .irish-quote {
-            color: var(--golden-yellow);
+            color: var(--warm-gold);
             font-style: italic;
             margin-top: 0.8rem;
         }
